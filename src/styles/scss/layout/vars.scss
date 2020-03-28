@@ -1,6 +1,8 @@
 //colors
-$main-color: red;
-$default-color: blue;
+$baseColor: #B0E0E6;
+$buttonColor: #A0522D;
+$buttonColorActive: #FF0000;
+$buttonColorHover: #800000;
 
 //resolutions
 $desktop: 1280px;
@@ -9,3 +11,7 @@ $tablet: 768px;
 $smartphone: 480px;
 $phone: 320px;
 
+//measures
+$borderRadius: 3px;
+$animationDuration: 2s;
+$animationStopDuration: 1s;

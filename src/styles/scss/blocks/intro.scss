@@ -1,9 +1,82 @@
+body {
+    margin: 0;
+}
+
 .wrapper {
-    color: $default-color;
-    background-image: url('/assets/images/2.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 500px;
-    @include tablet {
-        color: $main-color;
-    };
+    height: 100vh;
+    background-color: pink;
+}
+
+.start,
+.stop {
+    font-size: 24px;
+    color: $baseColor;
+    background-color: $buttonColor;
+    padding: 10px 20px;
+    margin: 0;
+    border: none;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    outline: none;
+    transition: .5s;
+
+    &:hover {
+        background-color: $buttonColorHover;
+    }
+
+    &:active {
+        background-color: $buttonColorActive;
+    }
+}
+
+.stop {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: stop $animationStopDuration infinite ease;
+    z-index: 10;
+}
+
+.photo {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    animation: born $animationDuration ease;
+}
+
+@keyframes born {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes stop {
+    0% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
 }
